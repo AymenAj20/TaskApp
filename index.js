@@ -41,8 +41,8 @@ app.use(`${API}/user`, userRouter);
 app.use(`${API}/task`, taskRouter);
 
 // Connexion au serveur NodeJS
-app.listen(SERVER_PORT,SERVER_HOST, () => {
-  console.log("Server Started "+SERVER_HOST+":"+SERVER_PORT);
+app.listen(SERVER_PORT, () => {
+  console.log("Server Started on port :"+SERVER_PORT);
 });
 
 //Connexion sur la base de données
