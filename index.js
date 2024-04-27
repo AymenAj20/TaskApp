@@ -33,7 +33,7 @@ const taskRouter = require("./Routes/TaskRouter");
 const authController = require('./authentication/AuthController')
 
 app.get('/',(req,res) => {
-  console.log('gg');
+  res.send("Server Started on port :"+SERVER_PORT);
 })
 // APIs
 app.use(`${API}/auth`, authRouter);
