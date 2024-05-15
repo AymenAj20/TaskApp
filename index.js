@@ -3,7 +3,7 @@ const app = express();
 const connectDB = require("./DB/dbConnect"); 
 const cors = require("cors");
 const morgan = require("morgan");
-
+const path = require("path");
 
 //Fichier envirennement
 require("dotenv/config");
@@ -32,9 +32,9 @@ const taskRouter = require("./Routes/TaskRouter");
 
 const authController = require('./authentication/AuthController')
 
-app.get('/',(req,res) => {
-  res.send("Server Started on port :"+SERVER_PORT);
-})
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'static', 'landing.html'));
+});
 // APIs
 app.use(`${API}/auth`, authRouter);
 app.use(`${API}/user`, userRouter);
@@ -46,6 +46,6 @@ app.listen(SERVER_PORT, () => {
 });
 
 //Connexion sur la base de données
-connectDB(); // Appel de la fonction de connexion à la base de données
+//connectDB(); // Appel de la fonction de connexion à la base de données
 
 module.exports = app;
