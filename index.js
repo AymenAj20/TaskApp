@@ -46,6 +46,6 @@ app.listen(SERVER_PORT, () => {
 });
 
 //Connexion sur la base de données
-//connectDB(); // Appel de la fonction de connexion à la base de données
+connectDB(); // Appel de la fonction de connexion à la base de données
 
 module.exports = app;
